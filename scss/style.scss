@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+
+    .back_header {
+
+        background-color: aqua;
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+
+            .logotipo {
+                .imagen_gato {
+                    width: 150px;
+                    height: 150px;
+                    margin: 15px;
+                    padding: 5px;
+                }
+
+            }
+
+            .apartados_de_busqueda {
+                ul {
+                    display: flex;
+                    list-style-type: none;
+
+                    li {
+                        display: flexbox;
+                        margin-top: 4rem;
+                        margin-right: 6rem;
+                        padding: 15px;
+                    }
+                }
+            }
+        }
+    }
+
+}
