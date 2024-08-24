@@ -1,41 +1,84 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de Lotería</title>
     <link rel="stylesheet" href="./css/style.css">
-    <title>Document</title>
 </head>
 <body>
-    <header>
-        <div class="back_header">
-            <nav>
-                <div class="logotipo">
-                    <a href=""><img class="imagen_gato" src="./imagenes/gato.png" alt="Logotipo de Pagina"></a>
-                </div>
-                <div class="apartados_de_busqueda">
-                    <ul>
-                        <li><a href="">Inicio</a></li>
-                        <li><a href="">Nosotros</a></li>
-                        <li><a href="">Informate</a></li>
-                        <li><a href="">Formulario</a></li>
-                        <li><a href="">Saber Mas</a></li>
-    
-                    </ul>
-                </div>
-            </nav>
+    <div id="app">
+        <div id="login-section">
+            <h2>Iniciar Sesión</h2>
+            <form id="login-form">
+                <input type="text" id="username" placeholder="Usuario" required>
+                <input type="password" id="password" placeholder="Contraseña" required>
+                <button type="submit">Ingresar</button>
+            </form>
+            <p>¿No tienes cuenta? <a href="#" id="show-register">Regístrate</a></p>
         </div>
-    </header>
 
-    <main>
-        <h1>INTERFAZ DE USUARIO EN PROCESO DE DESARROLLO / AUN ESTAMOS EN REPARACIONES</h1>
-    </main>
+        <div id="register-section" style="display: none;">
+            <h2>Registro</h2>
+            <form id="register-form">
+                <input type="text" id="new-username" placeholder="Nuevo Usuario" required>
+                <input type="password" id="new-password" placeholder="Nueva Contraseña" required>
+                <button type="submit">Registrarse</button>
+            </form>
+            <p>¿Ya tienes cuenta? <a href="#" id="show-login">Inicia sesión</a></p>
+        </div>
 
-    <footer>
+        <div id="store-section" style="display: none;">
+            <h1>Tienda de Lotería</h1>
+            <div id="user-profile">
+                <div id="user-avatar">
+                    <img src="placeholder-avatar.png" alt="Avatar" id="user-avatar-img">
+                </div>
+                <p>Puntos: <span id="user-points">0</span></p>
+            </div>
+            <div id="user-info">
+                <p>Saldo: $<span id="balance">0</span></p>
+                <button id="recharge-button">Recargar Saldo</button>
+                <button id="redeem-points-button">Canjear Puntos</button>
+            </div>
+            <div id="product-container"></div>
+            <div id="shopping-cart">
+                <h3>Carrito de Compras</h3>
+                <ul id="cart-items"></ul>
+                <p>Total: $<span id="cart-total">0</span></p>
+                <button id="checkout-button">Finalizar Compra</button>
+            </div>
+            <div id="purchase-history">
+                <h3>Historial de Compras</h3>
+                <ul id="history-list"></ul>
+            </div>
+            <button id="logout">Cerrar Sesión</button>
+        </div>
 
-    </footer>
+        <div id="recharge-section" style="display: none;">
+            <h2>Recargar Saldo</h2>
+            <form id="recharge-form">
+                <input type="number" id="recharge-amount" placeholder="Cantidad a recargar" required min="1000" step="1000">
+                <input type="password" id="recharge-password" placeholder="Contraseña" required>
+                <button type="submit">Confirmar Recarga</button>
+            </form>
+            <button id="back-to-store">Volver a la Tienda</button>
+        </div>
 
+        <div id="redeem-points-section" style="display: none;">
+            <h2>Canjear Puntos</h2>
+            <div id="redeem-options"></div>
+            <button id="back-to-store-from-redeem">Volver a la Tienda</button>
+        </div>
+    </div>
 
-    <script src="./script.js/primerapag.js"></script>
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <p id="popup-message"></p>
+            <button id="popup-close">Cerrar</button>
+        </div>
+    </div>
+
+    <script src="./script.js/script.js"></script>
 </body>
 </html>

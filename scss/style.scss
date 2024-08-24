@@ -1,42 +1,179 @@
-* {
+
+$neon-blue: #00ffff;
+$neon-pink: #ff00ff;
+$neon-green: #00ff00;
+
+
+$primary-color: $neon-blue;
+$secondary-color: $neon-green;
+$background-color: #1a1a1a;
+$text-color: #ffffff;
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: $background-color;
+    color: $text-color;
     margin: 0;
-    padding: 0;
+    padding: 20px;
 }
 
-header {
+#app {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
 
-    .back_header {
+#login-section, #register-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    
+    form {
+        width: 100%;
+        max-width: 400px;
+        padding: 20px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+        box-shadow: 0 0 10px $neon-blue, 0 0 20px $neon-pink;
+    }
+}
 
-        background-color: aqua;
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
 
-        nav {
-            display: flex;
-            justify-content: space-between;
+input, button {
+    padding: 10px;
+    font-size: 16px;
+}
 
-            .logotipo {
-                .imagen_gato {
-                    width: 150px;
-                    height: 150px;
-                    margin: 15px;
-                    padding: 5px;
-                }
+input {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid $neon-blue;
+    color: $text-color;
+    box-shadow: 0 0 5px $neon-blue;
+}
 
-            }
+button {
+    background-color: $primary-color;
+    color: $background-color;
+    border: none;
+    cursor: pointer;
+    text-shadow: 0 0 5px $primary-color;
+    box-shadow: 0 0 10px $primary-color;
+    transition: all 0.3s ease;
 
-            .apartados_de_busqueda {
-                ul {
-                    display: flex;
-                    list-style-type: none;
+    &:hover {
+        background-color: darken($primary-color, 10%);
+        box-shadow: 0 0 15px $primary-color, 0 0 25px $primary-color;
+    }
+}
 
-                    li {
-                        display: flexbox;
-                        margin-top: 4rem;
-                        margin-right: 6rem;
-                        padding: 15px;
-                    }
-                }
-            }
-        }
+#store-section, #recharge-section, #redeem-points-section {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid $neon-blue;
+    border-radius: 8px;
+    box-shadow: 0 0 10px $neon-blue;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+#user-profile, #user-info, #shopping-cart, #purchase-history {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid $neon-blue;
+    border-radius: 8px;
+    box-shadow: 0 0 10px $neon-blue;
+    padding: 15px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+
+    &:hover {
+        box-shadow: 0 0 15px $neon-blue, 0 0 25px $neon-pink;
+    }
+}
+
+#product-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.product-card {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid $neon-blue;
+    border-radius: 8px;
+    box-shadow: 0 0 10px $neon-blue;
+    padding: 15px;
+    transition: all 0.3s ease;
+
+    &:hover {
+        box-shadow: 0 0 15px $neon-blue, 0 0 25px $neon-pink;
     }
 
+    h3 {
+        margin-top: 0;
+        color: $secondary-color;
+        text-shadow: 0 0 5px $secondary-color;
+    }
+}
+
+#redeem-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+#logout, #recharge-button, #redeem-points-button {
+    background-color: $neon-pink;
+    box-shadow: 0 0 10px $neon-pink;
+
+    &:hover {
+        background-color: darken($neon-pink, 10%);
+        box-shadow: 0 0 15px $neon-pink, 0 0 25px $neon-pink;
+    }
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+
+    .popup-content {
+        background-color: rgba(255, 255, 255, 0.1);
+        border: 1px solid $neon-blue;
+        border-radius: 8px;
+        box-shadow: 0 0 20px $neon-blue, 0 0 40px $neon-pink;
+        padding: 20px;
+        text-align: center;
+
+        button {
+            margin-top: 10px;
+        }
+    }
+}
+
+h1, h2, h3, p {
+    color: $text-color;
+    text-shadow: 0 0 5px $neon-blue;
+}
+
+a {
+    color: $neon-green;
+    text-decoration: none;
+    text-shadow: 0 0 5px $neon-green;
+
+    &:hover {
+        text-shadow: 0 0 10px $neon-green, 0 0 20px $neon-green;
+    }
 }
